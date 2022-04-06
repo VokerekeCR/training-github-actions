@@ -1,0 +1,16 @@
+name: Terraform Testing
+on: [push]
+jobs:
+  Terraofrm-Fmt-Validate:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Testing our first workflow"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Terraform Init
+        run: terraform init
